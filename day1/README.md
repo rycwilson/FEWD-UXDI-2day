@@ -39,53 +39,149 @@ This is a lower-level protocol that HTTP runs on top of. Think of the "IP addres
 ## Front-end Web Development
 <hr>
 
-The front-end developer is primarily concered with that part of a web application that exists in the client's browser, i.e. the front-end of the application.  A web page (or collection of pages) is pieced together with a set of files known as **assets**.  The assets work together to bring you the magic of a functioning web site.
 
-- **HTML:** The structure of the page
-- **CSS:** The styling of the page
-- **Javascript:** The behavior of the page  
- 
-![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/img/html_css_javascript.png "Components of a web site")
+The front-end developer's job is to program the layout and functionality of a website. This is accomplished by writing code in HTML, CSS, and Javascript.  In developer lingo, the collection of HTML, CSS, and Javascript files that bring a page to life are called **assets**
 
 
-### Developer Tools
+- **HTML** describes the structure and the semantic content of a web document. It is the scaffold that adds various layout elements to your website.
+- **CSS** is a set of style properties that give your page its look and feel
+- **JavaScript** adds interactivity to the page.  When the user clicks a button, or submits a form, or there is some other kind of **event**, Javascript knows what to do.
 
-### The Request/Response cycle
+### Assets and the Request/Response cycle
 
 
 Demo it in Chrome Dev Tools
 
-
-
 <br>
+
+## Back-end Web Development
+<hr>
+- Provides core behind-the-scenes functionality
+	- Manage user accounts
+	- Database operations - CRUD (Create, Read, Update, Destroy)
+	- Reliability 
+	- Security 
+	- Tends to me a more complex undertaking than front-end development
+- Languages
+	- Ruby
+	- Python
+	- PHP
+	- C++
 	
-- How does front-end development fit in?
-	- What does a front-end developer do?
-	- Difference between front-end and back-end?
-	- Goals of FEWD
-		- Accessability, usability, performance
-	- What tools and technologies are used?
-		- Technologies: HTML, CSS, Javascript 
-		- Tools: Git, Sublime, Chrome Developer Tools
-		- More: SASS
-<br>
 
-- Benefits of Designers knowing HTML and CSS, and maybe even JS
-	- Add to existing website 
-	- Work with Axure-generated HTML, CSS, and JS
+
+## Developer Tools
+<hr>
+
+- Text Editor 
+- Chrome Developer Tools
+ 	- Inspect HTML elements and CSS styly properties
+	- Debug Javascript
+	- Program "what-if" scenarios
+	- Examine network activity
+- Git
+	- Version control
+	- Collaberation
+- CSS Frameworks
+	- Bootstrap
+	- Foundation	
+- Javascript Libraries
+	- jQuery
+	- Underscore
+	
+
+
+## What is the benefit of UX Designers understanding FEWD?
+
+- Communicate with your development partner 
+- Add to existing website 
+- Work with Axure-generated HTML, CSS, and JS
+	
 <br>		
 	
 	
-The Internet
--
-- Let's give ourselves a backdrop
-- TCP/IP, Domains (270 million!), Clients and Servers	
-- HTTP - a Client/Server protocol, request *resources*
-	- With some exceptions (e.g. web sockets), client always initializes interaction
-		
-HTML
--
-- Elements, tags, attributes, commenting, common elements
+
+##HTML
+<hr>
+
+**Elements** are the basic HTML building blocks of a web page.  
+
+**Attributes** modify an element in some way 
+
+**Tags** define the element and any attributes it has
+
+<br>
+
+![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/html_element.png?raw=true)
+
+<br>
+
+- Most elements have attributes that provide additional meaning or behavior
+
+![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/element_attribute.png?raw=true)]
+
+
+<br>
+
+##Common  HTML Elements
+<hr>
+
+####Required elements - \<html>, \<head>, \<body>
+- **\<html>** encompasses everything in the document, tells the browser it's reading an HTML document
+- **\<head>** is a section for data about the document.  Tags here aren't displayed on the page
+- **\<body>** is the content of the page that will be displayed in the browser
+- **<!DOCTYPE html>** identifies the doc as HTML5
+- **\<title>** creates a title to be displayed in the browser tab
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Document</title>
+</head>
+<body>
+  <!-- Contents of the page go here -->
+</body>
+</html>
+```
+
+
+####\<div>
+- A generic container that helps organize content on the page. 
+- An arbitrary number of other elements can be nested inside of a \<div>, including other \<div> elements
+
+```
+<div>
+  contents
+</div>
+```
+
+####\<input>
+
+####\<form>
+
+####\<p>
+
+####\<button>
+####\<ul>
+
+####\<img>
+
+####Including CSS with HTML
+```
+<link rel="stylesheet" href="/path/to/main.css">
+```
+
+####Linking Javascript with HTML
+
+
+
+- show some common elements
+- 
+- show how an attribute can ch
+- Syntax
+	- Elements, tags, attributes
+	- Commenting and indenting
 - DOM structure
 	- Node - Branch - Parent/Child elements
 - 
