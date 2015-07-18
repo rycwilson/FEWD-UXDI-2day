@@ -151,12 +151,24 @@ Demo it in Chrome Dev Tools
 - An arbitrary number of other elements can be nested inside of a \<div>, including other \<div> elements
 
 ```
-<div>
-  contents
+<div class='row'>
+  <div class='column'>
+    column 1 content
+  </div>
+  <div class='column>
+    column 2 content
+  </div>
 </div>
 ```
 
 ####\<input>
+- Creates a field for entering user input
+- The `type` attribute allows for different forms of user input (e.g. checkbox, radio button, date)
+- \<input> is a self-closing tag
+
+```
+<input type="text">
+```
 
 ####\<form>
 
