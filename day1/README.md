@@ -152,22 +152,17 @@ Demo it in Chrome Dev Tools
 
 ```
 <div class='row'>
-  <div class='column'>
-    column 1 content
-  </div>
-  <div class='column>
-    column 2 content
-  </div>
+
 </div>
 ```
 
 ####\<input>
 - Creates a field for entering user input
 - The `type` attribute allows for different forms of user input (e.g. checkbox, radio button, date)
-- \<input> is a self-closing tag
+- \<input> is a self-closing tag, i.e. no closing tag is required
 
 ```
-<input type="text">
+Enter your name: <input type="text">
 ```
 
 ####\<form>
