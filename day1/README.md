@@ -127,11 +127,11 @@ Demo it in Chrome Dev Tools
 <hr>
 
 ####Required elements - \<html>, \<head>, \<body>
-- **\<html>** encompasses everything in the document, tells the browser it's reading an HTML document
-- **\<head>** is a section for data about the document.  Tags here aren't displayed on the page
-- **\<body>** is the content of the page that will be displayed in the browser
-- **<!DOCTYPE html>** identifies the doc as HTML5
-- **\<title>** creates a title to be displayed in the browser tab
+- `<!DOCTYPE html>` identifies the doc as HTML5
+- `<html>` encompasses everything in the document, tells the browser to interpret the document as html
+- `<head>` is a section for data about the document.  Tags here aren't displayed on the page
+- `<body>` is the content of the page that will be displayed in the browser
+- `<title>` creates a title to be displayed in the browser tab
 
 ```
 <!DOCTYPE html>
@@ -147,58 +147,134 @@ Demo it in Chrome Dev Tools
 
 
 ####\<div>
-- A generic container that helps organize content on the page. 
-- An arbitrary number of other elements can be nested inside of a \<div>, including other \<div> elements
+- A generic container that helps organize content on the page
+- An arbitrary number of other elements can be nested inside of a `<div>`, including other `<div>` elements
 
 ```
-<div class='row'>
-
-</div>
+ <div class='row'>
+   <div class='column'>
+     <!-- column 1 content here -->
+   </div
+   <div class='column'>
+     <!-- column 2 content here -->
+   </div
+ </div>
 ```
+<br>
 
 ####\<input>
-- Creates a field for entering user input
+- Interactive controls	for accepting user input.  There are several different types...
 - The `type` attribute allows for different forms of user input (e.g. checkbox, radio button, date)
-- \<input> is a self-closing tag, i.e. no closing tag is required
+- Self-closing element, i.e. no closing tag is required
 
 ```
-Enter your name: <input type="text">
+<label for="name">Name: </label>
+<input type="text" id="name">
+```
+... will display this:
+
+<label for="name">Name: </label>
+<input type="text" id="name">
+
+<br>
+
+
+####\<h1> .. \<h6> - heading elements
+```
+ <h1>Largest Heading</h1>
+ ...
+ <h6>Smallest Heading</h6>
+```
+
+####\<p>
+```
+ <p>I'm a paragraph</p>
+```
+
+
+####\<button>
+- A button does some shit
+
+```
+<button type="submit">Click here!</button>
+```
+
+
+####\<ul>
+- unordered list
+- also `<ol>` for ordered lists
+
+```
+ <ul>My to do list
+   <li>item 1</li>
+   <li>item 2</li>
+   <li>item 3</li>
+ </ul>
+```
+.. will display this:
+<ul>My to-do list
+   <li>item 1</li>
+   <li>item 2</li>
+   <li>item 3</li>
+ </ul>
+
+####\<img>
+- display an image
+- must specify the `src` attribute
+- self-closing element (no closing tag needed)
+
+```
+<img src="/path/to/my_image.jpg">
 ```
 
 ####\<form>
+- include this?
 
-####\<p>
 
-####\<button>
-####\<ul>
 
-####\<img>
 
 ####Including CSS with HTML
+- including CSS from an external file:
+
 ```
 <link rel="stylesheet" href="/path/to/main.css">
 ```
 
-####Linking Javascript with HTML
+- including CSS internally:
+
+```
+ <head>
+   <style>
+     <!-- style rules here -->
+   </style>
+ </head
+```
+
+####Including Javascript with HTML
+- put your javascript code between `<script>` tags, or...
+- use the `src` attribute to specify an external file containing the javascript
+
+```
+ <script src="/path/to/app.js"></script>
+```
 
 
 
-- show some common elements
-- 
-- show how an attribute can ch
-- Syntax
-	- Elements, tags, attributes
-	- Commenting and indenting
-- DOM structure
-	- Node - Branch - Parent/Child elements
-- 
-- something else
-- Axure to HTML
+##DOM structure
+- Node 
+- Branch 
+- Parent/Child elements
+- 3D demo?
+
+<br>
 
 
 
-CSS
--
+
+
+##CSS - Cascading Style Sheets
+<hr>
+
 
 - Properties, Rules, Selectors, syntax
 - Including with HTML, Sources
@@ -210,7 +286,7 @@ CSS
 - Pseudo-classes
 - Box Model
 - External vs. internal vs. inline, priority, "Separation of Concerns"
-- "Computed"?
+- "Computed"
 - Layout: Display and Position properties
 - What is "responsive" design?
 - Power UP with SASS
