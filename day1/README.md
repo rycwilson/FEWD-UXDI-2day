@@ -295,10 +295,39 @@ A web page is structured like a tree
 ##CSS - Cascading Style Sheets
 <hr>
 
-###Including with HTML
-A stylesheet consists of a collection of style **rules**.  Each rule contains an arbitrary number of **declarations** (or settings) and is targeted at those elements in the page that are matched by the rule **selector**.  
+###What is a stylesheet?
+A stylesheet consists of a collection of style **rules**.  Each rule contains an arbitrary number of **declarations** (or property settings) and is targeted at those elements in the page that are matched by the rule **selector(s)**.  
 
-![alt text](css_syntax.png) 
+<br>
+
+![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/css_syntax.png?raw=true)
+
+(Demo)
+
+###The Box Model
+
+
+**typography**
+font-*
+text-*
+
+**appearance**
+color
+background-color
+border-*
+visibility
+
+**layout**
+margin-*
+height
+width
+position
+display
+
+
+###Cascading
+It might be more accurate to say "Competing"
+
 
 
 - Properties, Rules, Selectors, syntax
