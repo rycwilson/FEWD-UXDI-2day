@@ -102,7 +102,6 @@ Demo it in Chrome Dev Tools
 	
 
 ##HTML
-<hr>
 
 **Elements** are the basic HTML building blocks of a web page.  
 
