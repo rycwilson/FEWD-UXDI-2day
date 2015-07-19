@@ -123,12 +123,15 @@ Demo it in Chrome Dev Tools
 <br>
 
 ##Common  HTML Elements
-<hr>
+For a comprehensive list: [MDN HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
 
-####Required elements - \<html>, \<head>, \<body>
+Exercises:
+
+
+###Required elements - \<html>, \<head>, \<body>
 - `<!DOCTYPE html>` identifies the doc as HTML5
 - `<html>` encompasses everything in the document, tells the browser to interpret the document as html
-- `<head>` is a section for data about the document.  Tags here aren't displayed on the page
+- `<head>` is a section for data about the document, or inclusion of other files (CSS, Javascript).  Tags here aren't displayed in the browser
 - `<body>` is the content of the page that will be displayed in the browser
 - `<title>` creates a title to be displayed in the browser tab
 
@@ -144,9 +147,8 @@ Demo it in Chrome Dev Tools
 </html>
 ```
 
-
-####\<div>
-- A generic container that helps organize content on the page
+###\<div>
+- Generic container that helps organize content on the page
 - An arbitrary number of other elements can be nested inside of a `<div>`, including other `<div>` elements
 
 ```
@@ -159,11 +161,24 @@ Demo it in Chrome Dev Tools
    </div
  </div>
 ```
-<br>
 
-####\<input>
+###\<a>
+- Anchor link: clickable link to any web page or to any element in the same page
+
+```
+ <!-- link to some external site -->
+ <a href="http://google.com">Google</a>
+```
+```
+ <!-- link to an anchor on the same page -->
+ <a href="#target">Go to Section 3</a>
+ ...
+ <a id="target">Section 3</a>
+```
+
+###\<input>
 - Interactive controls	for accepting user input.  There are several different types...
-- The `type` attribute allows for different forms of user input (e.g. checkbox, radio button, date)
+- The `type` attribute allows for different forms of user input (e.g. text, checkbox, radio button, date)
 - Self-closing element, i.e. no closing tag is required
 
 ```
@@ -177,47 +192,40 @@ Demo it in Chrome Dev Tools
 
 <br>
 
-
-####\<h1> .. \<h6> - heading elements
+###\<h1> .. \<h6> - heading elements
 ```
  <h1>Largest Heading</h1>
  ...
  <h6>Smallest Heading</h6>
 ```
 
-####\<p>
+###\<p>
 ```
- <p>I'm a paragraph</p>
+ <p>I'm a paragraph!</p>
 ```
 
 
-####\<button>
-- A button does some shit
+###\<button>
 
 ```
 <button type="submit">Click here!</button>
 ```
 
 
-####\<ul>
+###\<ul>
 - unordered list
 - also `<ol>` for ordered lists
 
 ```
- <ul>My to do list
+ <ul>My to-do list
    <li>item 1</li>
    <li>item 2</li>
    <li>item 3</li>
  </ul>
 ```
-.. will display this:
-<ul>My to-do list
-   <li>item 1</li>
-   <li>item 2</li>
-   <li>item 3</li>
- </ul>
 
-####\<img>
+
+###\<img>
 - display an image
 - must specify the `src` attribute
 - self-closing element (no closing tag needed)
@@ -226,13 +234,12 @@ Demo it in Chrome Dev Tools
 <img src="/path/to/my_image.jpg">
 ```
 
-####\<form>
+###\<form>
 - include this?
 
 
 
-
-####Including CSS with HTML
+###Including CSS with HTML
 - including CSS from an external file:
 
 ```
@@ -249,7 +256,7 @@ Demo it in Chrome Dev Tools
  </head
 ```
 
-####Including Javascript with HTML
+###Including Javascript with HTML
 - put your javascript code between `<script>` tags, or...
 - use the `src` attribute to specify an external file containing the javascript
 
@@ -260,6 +267,8 @@ Demo it in Chrome Dev Tools
 
 
 ##DOM structure
+
+A web page is structured like a tree
 - Node 
 - Branch 
 - Parent/Child elements
@@ -268,11 +277,28 @@ Demo it in Chrome Dev Tools
 <br>
 
 
+##Demo (I do)
+- ?
+
+
+##Cookie Recipe Lab
+
+- Use some of the tags we just learned about to make our recipe page more presentable
+- Reference [the docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) as necessary
+- Bonus challenge
+
+<br><br>
+
 
 
 
 ##CSS - Cascading Style Sheets
 <hr>
+
+###Including with HTML
+A stylesheet consists of a collection of style **rules**.  Each rule contains an arbitrary number of **declarations** (or settings) and is targeted at those elements in the page that are matched by the rule **selector**.  
+
+![alt text](css_syntax.png) 
 
 
 - Properties, Rules, Selectors, syntax
@@ -290,7 +316,4 @@ Demo it in Chrome Dev Tools
 - What is "responsive" design?
 - Power UP with SASS
 
-_
-<br>
-Animation?
--
+
