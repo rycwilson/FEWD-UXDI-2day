@@ -171,6 +171,14 @@ Some examples:
 
 Always make sure you understand what the code is doing before copying and pasting it. Fortunately, this is not too challenging and Bootstrap has excellent documentation. As always, if you're confused or things are breaking - google around. Bootstrap is pretty much ubiquitous and it is likely that others have encountered and (hopefully) solved the issues you're dealing with.
 
+##Bootstrap Lab
+To put your new skills to practice, use Bootstrap to craft three different mock-ups.  Each one will be more challenging than the last!
+
+Find the mock-ups in bootstrap/
+
+-
+-
+-
 
 
 
