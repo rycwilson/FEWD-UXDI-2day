@@ -162,6 +162,14 @@ Exercises:
  </div>
 ```
 
+###\<span>
+- Generic container like a `<div>`, however `<span>` is for **inline** elements while `<div>` is for **block-level** elements
+- usually used to single out some snippet of text for styling
+
+```
+ <p>This topic is <span class='important'>very important!</span></p>
+```
+
 ###\<a>
 - Anchor link: clickable link to any web page or to any element in the same page
 
