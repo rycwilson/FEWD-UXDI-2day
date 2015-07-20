@@ -18,17 +18,17 @@
 
 Clients and Servers are *cooperating* programs within an application.  In this class our focus is on web servers, but there are other kinds (e.g. proxy server, FTP server).  The client of a web server is a web browser, which may be running on a desktop, laptop, or mobile device.
 
-With a few exceptions, all interactions between clients and servers are initiated by the client, which requests some resource or service from the server.  The conversation between client and server is known as the **Request/Response Cycle**.  The **protocol** (language) used in this conversation is HTTP, or HyperText Transfer Protocol.  
+With a few exceptions, all interactions between clients and servers are initiated by the client, which requests some resource or service from the server.  The conversation between client and server is known as the **Request/Response Cycle**.  The **protocol** (language) used in this conversation is HTTP, or HyperText Transfer Protocol.
 
 ####HTTP methods - GET, POST, PUT, DELETE
 - Accomplish what is commonly known as CRUD - Create, Read, Update, Destroy
 - Have a look with Chrome Dev Tools
-   
+
 ####TCP/IP
 
 This is a lower-level protocol that HTTP runs on top of. Think of the "IP address" of a computer on the internet.  Computer networking is divided into distinct "layers" of abstraction.  HTTP sits at the top on the Application layer and TCP/IP spans across several lower layers.  If you want to learn more, check out the [OSI model](https://en.wikipedia.org/wiki/OSI_model).
 
-####So what are Resources and Services?  
+####So what are Resources and Services?
 ######maybe just speak to this, not include it
 
 - **Resource:** Documents, images, or collections of such.  Something that is identifiable
@@ -59,21 +59,21 @@ Demo it in Chrome Dev Tools
 - Provides core behind-the-scenes functionality
 	- Manage user accounts
 	- Database operations - CRUD (Create, Read, Update, Destroy)
-	- Reliability 
-	- Security 
+	- Reliability
+	- Security
 	- Tends to me a more complex undertaking than front-end development
 - Languages
 	- Ruby
 	- Python
 	- PHP
 	- C++
-	
+
 
 
 ## Developer Tools
 <hr>
 
-- Text Editor 
+- Text Editor
 - Chrome Developer Tools
  	- Inspect HTML elements and CSS styly properties
 	- Debug Javascript
@@ -84,28 +84,28 @@ Demo it in Chrome Dev Tools
 	- Collaberation
 - CSS Frameworks
 	- Bootstrap
-	- Foundation	
+	- Foundation
 - Javascript Libraries
 	- jQuery
 	- Underscore
-	
+
 
 
 ## What is the benefit of UX Designers understanding FEWD?
 
-- Communicate with your development partner 
-- Add to existing website 
+- Communicate with your development partner
+- Add to existing website
 - Work with Axure-generated HTML, CSS, and JS
-	
-<br>		
-	
-	
+
+<br>
+
+
 
 ##HTML
 
-**Elements** are the basic HTML building blocks of a web page.  
+**Elements** are the basic HTML building blocks of a web page.
 
-**Attributes** modify an element in some way 
+**Attributes** modify an element in some way
 
 **Tags** define the element and any attributes it has
 
@@ -277,8 +277,8 @@ Exercises:
 ##DOM structure
 
 A web page is structured like a tree
-- Node 
-- Branch 
+- Node
+- Branch
 - Parent/Child elements
 - 3D demo?
 
@@ -304,7 +304,7 @@ A web page is structured like a tree
 <hr>
 
 ###Including with HTML
-There are several different ways to incorporate CSS rules into your HTML file.  It is best practice to include them from an external `.css` file (first option below), so that will be our focus.  
+There are several different ways to incorporate CSS rules into your HTML file.  It is best practice to include them from an external `.css` file (first option below), so that will be our focus.
 
 - External `.css` file
 	- Include a `<link>` to the CSS file in your `<head>` tag
@@ -331,7 +331,7 @@ There are several different ways to incorporate CSS rules into your HTML file.  
 	- Style settings can be applied directly to an element through the `style` attribute
 	- Separate settings by a semicolon, include as many as you like
 	- This approach should be used sparingly
-	
+
 ```
  <div style="background-color:blue; font-size:12">
    <!-- content here will have a blue background and a font size of 12 -->
@@ -340,7 +340,7 @@ There are several different ways to incorporate CSS rules into your HTML file.  
 <br>
 
 ###What is a stylesheet?
-A stylesheet consists of a collection of style **rules**.  Each rule contains an arbitrary number of **declarations** (or property settings) and is targeted at elements in the page that are matched by the rule **selector(s)**.  
+A stylesheet consists of a collection of style **rules**.  Each rule contains an arbitrary number of **declarations** (or property settings) and is targeted at elements in the page that are matched by the rule **selector(s)**.
 
 <br>
 
@@ -354,11 +354,11 @@ CSS rules can come from a number of different sources.  Like:
 - Browser default settings (user-agent stylesheet)
 - Developer settings (`.css` files linked to the page)
 	- CSS frameworks
-	- developer's own `.css` file	
-- User settings	
+	- developer's own `.css` file
+- User settings
 	- user can change the browser defaults
-	
-...  With all these sources, it is inevitable that settings will overlap and conflict with one another.  For two or more settings that apply to the same element, the browser has to decide which setting wins.  This is the meaning of "cascading." 
+
+...  With all these sources, it is inevitable that settings will overlap and conflict with one another.  For two or more settings that apply to the same element, the browser has to decide which setting wins.  This is the meaning of "cascading."
 
 So how does the browser decide? ...
 
@@ -366,7 +366,7 @@ So how does the browser decide? ...
 blah blah blah
 
 ###Selectors
-Cover tag, id, class, multiple (comma-separated), descendant, then...d 
+Cover tag, id, class, multiple (comma-separated), descendant, then...d
 
 ###Selectors Exercise - Bento Box (20 mins)
 
@@ -376,17 +376,17 @@ Cover tag, id, class, multiple (comma-separated), descendant, then...d
 ## CSS Properties
 
 ###The Box Model
-Each HTML element in a web page is represented as a rectangular box. The box model describes the content of the space taken by an element. There are four essential edges in the model: margin, border, padding, and content.  These are CSS properties that apply to all elements. 
+Each HTML element in a web page is represented as a rectangular box. The box model describes the content of the space taken by an element. There are four essential edges in the model: margin, border, padding, and content.  These are CSS properties that apply to all elements.
 
 ![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/box_model.png?raw=true)
 
 ###CSS Properties of the Box Model
-- `margin` 
+- `margin`
 
 ```
  <!-- in order: top, right, bottom, left -->
  margin: 10px 5px 10px 5px;
- 
+
  <!-- individual -->
  margin-top: 10px;
 ```
@@ -395,7 +395,7 @@ Each HTML element in a web page is represented as a rectangular box. The box mod
 ```
  <!-- width, type, color -->
  border: 1px solid black
- 
+
  <!-- individual -->
  border-top: 1px solid black;
 ```

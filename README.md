@@ -15,6 +15,5 @@
 -
 
 - Review HTML and CSS, introduce more advanced concepts
-- Intro to SASS 
 - Intro to Twitter Bootstrap
 - Lab time
