@@ -295,8 +295,44 @@ A web page is structured like a tree
 ##CSS - Cascading Style Sheets
 <hr>
 
+###Including with HTML
+There are several different ways to incorporate CSS rules into your HTML file.  It is best practice to include them from an external `.css` file (first option below), so that will be our focus.  
+
+- External `.css` file
+	- Include a `<link>` to the CSS file in your `<head>` tag
+
+
+```
+<link rel="stylesheet" href="path/to/main.css">
+```
+
+- Internal `<style>` tag
+	- Rules go in the `<style>` tag, which goes in the `<head>` tag
+	- The rules will only apply to this page
+
+```
+<head>
+  <title>My Page</title>
+  <style>
+    <!-- CSS rules go here -->
+  </style>
+</head>
+```
+
+- Inline
+	- Style settings can be applied directly to an element through the `style` attribute
+	- Separate settings by a semicolon, include as many as you like
+	- This approach should be used sparingly
+	
+```
+ <div style="background-color:blue; font-size:12">
+   <!-- content here will have a blue background and a font size of 12 -->
+ </div>
+```
+<br>
+
 ###What is a stylesheet?
-A stylesheet consists of a collection of style **rules**.  Each rule contains an arbitrary number of **declarations** (or property settings) and is targeted at those elements in the page that are matched by the rule **selector(s)**.  
+A stylesheet consists of a collection of style **rules**.  Each rule contains an arbitrary number of **declarations** (or property settings) and is targeted at elements in the page that are matched by the rule **selector(s)**.  
 
 <br>
 
@@ -304,7 +340,59 @@ A stylesheet consists of a collection of style **rules**.  Each rule contains an
 
 (Demo)
 
+###"Cascading"
+CSS rules can come from a number of different sources.  Like:
+
+- Browser default settings (user-agent stylesheet)
+- Developer settings (`.css` files linked to the page)
+	- CSS frameworks
+	- developer's own `.css` file	
+- User settings	
+	- user can change the browser defaults
+	
+...  With all these sources, it is inevitable that settings will overlap and conflict with one another.  For two or more settings that apply to the same element, the browser has to decide which setting wins.  This is the meaning of "cascading." 
+
+So how does the browser decide? ...
+
+###Specificity
+blah blah blah
+
+###Selectors
+Cover tag, id, class, multiple (comma-separated), descendant, then...d 
+
+###Selectors Exercise - Bento Box (20 mins)
+
+<br>
+
+
+## CSS Properties
+
 ###The Box Model
+Each HTML element in a web page is represented as a rectangular box. The box model describes the content of the space taken by an element. There are four essential edges in the model: margin, border, padding, and content.  These are CSS properties that apply to all elements. 
+
+![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/box_model.png?raw=true)
+
+###CSS Properties of the Box Model
+- `margin` 
+
+```
+ <!-- in order: top, right, bottom, left -->
+ margin: 10px 5px 10px 5px;
+ 
+ <!-- individual -->
+ margin-top: 10px;
+```
+- `border`
+
+```
+ <!-- width, type, color -->
+ border: 1px solid black
+ 
+ <!-- individual -->
+ border-top: 1px solid black;
+```
+
+- `padding` - similar to margin
 
 
 **typography**
@@ -324,25 +412,11 @@ width
 position
 display
 
-
-###Cascading
-It might be more accurate to say "Competing"
-
-
-
-- Properties, Rules, Selectors, syntax
-- Including with HTML, Sources
-- "Cascading" -> Specificity
-	- "Competing" might be more appropriate
-	- With CSS coming from different sources, more than one stylesheet rule may apply to a given HTML element.  How does the page know which one to apply?  Answer: The one that is more *specific*
-	- Different sources?
-		- Author, user (if page style can be dynamically changed based on user input), CSS frameworks (e.g. Bootstrap), browser (may or may not be an *actual* stylesheet)
+##Advanced CSS
 - Pseudo-classes
-- Box Model
-- External vs. internal vs. inline, priority, "Separation of Concerns"
-- "Computed"
 - Layout: Display and Position properties
-- What is "responsive" design?
-- Power UP with SASS
+- Responsive Design
+
+
 
 
