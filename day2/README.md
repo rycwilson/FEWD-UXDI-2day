@@ -22,6 +22,8 @@ They might already know
 ##Including Bootstrap with HTML
 We need to include Bootstrap's CSS and Javascript libraries.  There are a few different ways to accomplish this, listed below.  In this class, we'll keep things easy and use the first approach.
 
+NOTE  Bootstrap needs jQuery
+
 1. CDN (Content Delivery Network - someone else hosts the library/framework and you access it via a URL)
 2. Include the actual CSS and JS files - great for offline development
 3. Bower - a package manager for front-end dependencies.  This is the approach a developer would likely take in order to create a robust, production application.
@@ -131,7 +133,7 @@ Bootstrap comes with a set of icons that can be included in your page using the 
 ####Buttons
 Bootstrap provides a wide selection of button sizes and colors.  Button classes can be applied not just to `<button>` elements, but also `<a>` and `<input>` elements
 
-Sometimes you need to provide multiple classes to to an element in order for Bootstrap to  style it.  The button classes are an example of this:
+Sometimes you need to provide multiple classes to an element in order for Bootstrap to style it.  The button classes are an example of this:
 
 ```
  <!-- Standard button -->
@@ -159,7 +161,7 @@ Bootstrap is also very helpful when you need to style your forms. All textual `<
 **Aside:** Form "controls"?  
 
 ####Javascript plug-ins
-Bootstrap allows you to incorporate interactive behavior into your page with Javascript plug-ins.  While you would ultimately have to write some JS in order for these components to provide actualy functionality within an application, you don't have to write JS if you're simply mocking up a UI.
+Bootstrap allows you to incorporate interactive behavior into your page with Javascript plug-ins.  While you would ultimately have to write some JS in order for these components to provide actual functionality within the application, you don't have to write JS if you're simply mocking up a UI.
 
 Some examples:
 

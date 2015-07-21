@@ -21,10 +21,11 @@ Clients and Servers are *cooperating* programs within an application.  In this c
 With a few exceptions, all interactions between clients and servers are initiated by the client, which requests some resource or service from the server.  The conversation between client and server is known as the **Request/Response Cycle**.  The **protocol** (language) used in this conversation is HTTP, or HyperText Transfer Protocol.
 
 ####HTTP methods - GET, POST, PUT, DELETE
+
 - Accomplish what is commonly known as CRUD - Create, Read, Update, Destroy
 - Have a look with Chrome Dev Tools
 
-####TCP/IP
+####TCP/IP - (Probably TMI)
 
 This is a lower-level protocol that HTTP runs on top of. Think of the "IP address" of a computer on the internet.  Computer networking is divided into distinct "layers" of abstraction.  HTTP sits at the top on the Application layer and TCP/IP spans across several lower layers.  If you want to learn more, check out the [OSI model](https://en.wikipedia.org/wiki/OSI_model).
 
@@ -55,7 +56,7 @@ Demo it in Chrome Dev Tools
 <br>
 
 ## Back-end Web Development
-<hr>
+
 - Provides core behind-the-scenes functionality
 	- Manage user accounts
 	- Database operations - CRUD (Create, Read, Update, Destroy)
@@ -71,11 +72,15 @@ Demo it in Chrome Dev Tools
 
 
 ## Developer Tools
-<hr>
 
-- Text Editor
+- Sublime
+	- linter, [Emmett](http://emmet.io/)
+	- file types
+	- "open in browser" command
+	- multi-window
+	- snippets
 - Chrome Developer Tools
- 	- Inspect HTML elements and CSS styly properties
+ 	- Inspect HTML elements and CSS style properties
 	- Debug Javascript
 	- Program "what-if" scenarios
 	- Examine network activity
@@ -117,7 +122,7 @@ Demo it in Chrome Dev Tools
 
 - Most elements have attributes that provide additional meaning or behavior
 
-![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/element_attribute.png?raw=true)]
+![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/element_attribute.png?raw=true)
 
 
 <br>
@@ -200,6 +205,22 @@ Exercises:
 
 <br>
 
+###\<form>
+- Forms are one of the most common ways to send user input to a server
+- Inputs contained within the form get sent to the server on **submit** event 
+	- What triggers a submit?  usually `<input type="submit">` is clicked.  
+- The inputs of a form are collectively referred to as **form controls**
+- Two essential attributes...
+	- `action` - this specifies where the data will be sent when it's submitted, or its **route**.  The server-side code will be set up to handle routes. If no action is specified, default will be the current page. 
+	- `method` - this specifies the HTTP method used to handle the submit request. If none is specified, default is POST 
+		- GET = retrieve data from the server (think of a Google Search)
+		- POST = provide data to the server (think of filling out a user profile)
+		- also PUT (update) and DELETE, but those get trickier
+- Let's look at an example...
+
+<br>
+
+
 ###\<h1> .. \<h6> - heading elements
 ```
  <h1>Largest Heading</h1>
@@ -242,9 +263,6 @@ Exercises:
 <img src="/path/to/my_image.jpg">
 ```
 
-###\<form>
-- include this?
-
 
 
 ###Including CSS with HTML
@@ -271,29 +289,42 @@ Exercises:
 ```
  <script src="/path/to/app.js"></script>
 ```
+<br>
 
+##HTML Form Lab
+
+1. Open `html_form/index.html`
+2. For each comment denoted by <!-- --> replace the comment text with the correct HTML as per the instruction to create the form
+3. Link to an external Google stylesheet in order to import a font-family.  Then change the font-family property in your CSS file to see the changes.
+4. Use the autofocus attribute to place focus on the first input field when the page loads
+4. Bonus: Use CSS to change the background color of the page. Experiment with using images as backgrounds as well.
+5. Double Bonus: Review the CSS transition property documentation and try to create a small animation anywhere on the form. An example may be to highlight a border around a form field when it is clicked.
+
+<br>
 
 
 ##DOM structure
 
 A web page is structured like a tree
-- Node
-- Branch
-- Parent/Child elements
-- 3D demo?
+
+- Node/Branch
+- Parent/Child relationships
+- Demo Mozilla 3D viewer
 
 <br>
 
 
-##Demo (I do)
-- ?
 
 
 ##Cookie Recipe Lab
 
-- Use some of the tags we just learned about to make our recipe page more presentable
-- Reference [the docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) as necessary
-- Bonus challenge
+1. Open `day1/cookie_recipe_lab/cookie_recipe.html` in your Sublime Editor
+2. Right-click the open file in Sublime and select `Open in Browser`
+	- oops, needs some work
+3. Use some of the tags we just learned about to make our recipe page more presentable
+4. Reference [the docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) as necessary
+5. Bonus challenge
+	- turn round bullet points into square bullet points
 
 <br><br>
 
@@ -301,7 +332,6 @@ A web page is structured like a tree
 
 
 ##CSS - Cascading Style Sheets
-<hr>
 
 ###Including with HTML
 There are several different ways to incorporate CSS rules into your HTML file.  It is best practice to include them from an external `.css` file (first option below), so that will be our focus.
@@ -352,23 +382,54 @@ A stylesheet consists of a collection of style **rules**.  Each rule contains an
 CSS rules can come from a number of different sources.  Like:
 
 - Browser default settings (user-agent stylesheet)
-- Developer settings (`.css` files linked to the page)
-	- CSS frameworks
-	- developer's own `.css` file
+- Developer settings (`.css` files linked to the HTML)
+	- CSS frameworks (e.g. Bootstrap)
+	- developer's own `.css` file(s)
 - User settings
 	- user can change the browser defaults
 
-...  With all these sources, it is inevitable that settings will overlap and conflict with one another.  For two or more settings that apply to the same element, the browser has to decide which setting wins.  This is the meaning of "cascading."
+With all these sources, it is inevitable that settings will overlap and conflict with one another.  For two or more settings that apply to the same element, the browser has to decide which setting to apply.  This is the meaning of "cascading."
 
-So how does the browser decide? ...
+So how does the browser decide? ...  
 
-###Specificity
-blah blah blah
+###Selectors and Specificity
+In order to create a CSS rule, we first have to select the element(s) it applies to.  There are A LOT of different ways to do this, some more **specific** than others.  This is the solution to the "cascading" problem.  The browser will examine all the rules that apply to a given element and **compute** which one is most specific.  In the event that two rules are equi-specific, the LAST one that was loaded into the browser will win.
 
-###Selectors
-Cover tag, id, class, multiple (comma-separated), descendant, then...d
+**Tag** - Select all `<p>` elements
+
+```
+p {
+  ...
+}
+```
+
+**Class** - Select all elements with `class="my_class"`
+
+```
+.my_class {
+  ...
+}
+```
+
+**ID** - Select the element with `id="my_element"`  
+
+- Obviously, you'll want to avoid giving two elements the same ID.
+
+```
+ #my_element {
+   ...
+ }
+```
+
+**Descendent**
+
+**Direct Descendent**
+
+[Learn more](http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+
 
 ###Selectors Exercise - Bento Box (20 mins)
+[Have fun!](http://flukeout.github.io)
 
 <br>
 
@@ -376,7 +437,7 @@ Cover tag, id, class, multiple (comma-separated), descendant, then...d
 ## CSS Properties
 
 ###The Box Model
-Each HTML element in a web page is represented as a rectangular box. The box model describes the content of the space taken by an element. There are four essential edges in the model: margin, border, padding, and content.  These are CSS properties that apply to all elements.
+Each HTML element in a web page is represented as a rectangular box. The box model describes the content of the space taken by an element. There are four essential edges in the model: margin, border, padding, and content.  The margin, border, and padding properties exist for ALL elements.  So let's start with those...
 
 ![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/box_model.png?raw=true)
 
@@ -403,22 +464,9 @@ Each HTML element in a web page is represented as a rectangular box. The box mod
 - `padding` - similar to margin
 
 
-**typography**
-font-*
-text-*
+####Other common CSS properties
 
-**appearance**
-color
-background-color
-border-*
-visibility
-
-**layout**
-margin-*
-height
-width
-position
-display
+...
 
 ##Advanced CSS
 - Pseudo-classes
