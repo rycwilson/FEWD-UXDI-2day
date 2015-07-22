@@ -67,45 +67,42 @@ Demo - Chrome Dev Tools
 	- PHP
 	- C++
 
+<br>
 
 
 ## Developer Tools
 
-- Sublime
-	- "open in browser" command
-	- productivity tools
-		- linter, [Emmett](http://emmet.io/)
-		- snippets
-		- multi-window
-	- learn keyboard shortcuts as much as possible!
-- Chrome Developer Tools	
-	- See your work the way the browser sees it
-	- Speed up HTML/CSS work flow
- 	- Inspect HTML elements and CSS style properties
-	- Debug Javascript
-	- Program "what-if" scenarios
-	- Examine network activity
-- Git
-	- Version control
-	- Collaberation
-- CSS Frameworks
-	- Bootstrap
-	- Foundation
-- Javascript Libraries
-	- jQuery
-	- Underscore
+###Sublime text editor
+- productivity tools
+	- linter: checks your syntax in real-time
+	- auto code completion
+	- snippets
+- learn keyboard shortcuts as much as possible!
 
+###Chrome Developer Tools	
+- Inspect HTML elements and CSS style properties
+- Debug Javascript
+- Program "what-if" scenarios
+- Examine network activity
 
+###Git
+- Version control
+- Collaberation
+- projects reside in repositories, or "repos"
 
-## What is the benefit of UX Designers understanding FEWD?
+###Frameworks
+"Framework" is a generic term that describes a piece of software that is used to help developers build other software.  There are frameworks for both front-end and back-end development.  Some front-end frameworks:
 
-- Communicate with your development partner
-- Add to existing website
-- Work with Axure-generated HTML, CSS, and JS
+- Bootstrap CSS
+- Angular Javascript
+
+###Javascript Libraries
+Pre-canned functionality to boost a developer's productivity.  "Don't reinvent the wheel."
+
+- jQuery
+- Underscore
 
 <br>
-
-
 
 ##HTML
 
@@ -130,8 +127,6 @@ Demo - Chrome Dev Tools
 
 ##Common  HTML Elements
 For a comprehensive list: [MDN HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
-
-Exercises:
 
 
 ###Required elements - \<html>, \<head>, \<body>
@@ -169,7 +164,7 @@ Exercises:
 ```
 
 ###\<span>
-- Generic container like a `<div>`, however `<span>` is for **inline** elements while `<div>` is for **block-level** elements
+- Generic container like a `<div>`, however `<span>` is for **inline** elements while `<div>` is for **block** elements
 - usually used to single out some snippet of text for styling
 
 ```
@@ -292,10 +287,22 @@ Exercises:
 ```
 <br>
 
+##Cookie Recipe Lab
+
+1. Open `day1/cookie_recipe_lab/cookie_recipe.html` in your Sublime Editor
+2. Right-click the open file in Sublime and select `Open in Browser`
+	- oops, needs some work
+3. Let's use some of the tags we just learned about to make our recipe page more presentable
+4. Reference [the docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) as necessary
+5. Bonus challenge
+	- turn round bullet points into square bullet points
+
+<br>
+
 ##HTML Form Lab
 
 1. Open `html_form/index.html`
-2. For each comment denoted by <!-- --> replace the comment text with the correct HTML as per the instruction to create the form
+2. For each comment denoted by \<!-- --> replace the comment text with the correct HTML as per the instruction to create the form
 3. Link to an external Google stylesheet in order to import a font-family.  Then change the font-family property in your CSS file to see the changes.
 4. Use the autofocus attribute to place focus on the first input field when the page loads
 4. Bonus: Use CSS to change the background color of the page. Experiment with using images as backgrounds as well.
@@ -305,29 +312,15 @@ Exercises:
 
 
 ##DOM structure
+"DOM" stand for Document Object Model - the developer's fancy term for the page
 
-A web page is structured like a tree
+The DOM is structured like a tree
 
-- Node/Branch
+- Branches/Nodes
 - Parent/Child relationships
 - Demo Mozilla 3D viewer
 
 <br>
-
-
-
-
-##Cookie Recipe Lab
-
-1. Open `day1/cookie_recipe_lab/cookie_recipe.html` in your Sublime Editor
-2. Right-click the open file in Sublime and select `Open in Browser`
-	- oops, needs some work
-3. Use some of the tags we just learned about to make our recipe page more presentable
-4. Reference [the docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference) as necessary
-5. Bonus challenge
-	- turn round bullet points into square bullet points
-
-<br><br>
 
 
 
@@ -510,7 +503,7 @@ Partner up and work though levels 15-26
 
 
 ## CSS Properties
-For a comprehensive list: [CSS docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+For a comprehensive list: [CSS properties](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
 ###The Box Model
 Each HTML element in a web page is represented as a rectangular box. The box model describes the content of the space taken by an element. There are four essential edges in the model: margin, border, padding, and content.  The margin, border, and padding properties exist for ALL elements.  So let's start with those...
@@ -542,18 +535,52 @@ Each HTML element in a web page is represented as a rectangular box. The box mod
 
 ####Other common CSS properties
 
-...
+- width
+- height
+- border* (lots)
+- font* (lots)
+- color (text color)
+- background-color
+- background-image
+- text-align
+- opacity 
+
 
 ###Display property
+The `display` property defines whether an element occupies the entire width of the page (`display: block`), or can share space horizontally with other elements (`display: inline`). Different elements have different default values for `display`, all of which can be changed. For example, a `<span>` is by default an inline element while a `<div>` is a block element. 
+
+Inline elements only occupy the space between their tags.  These three `<span>` elements will occupy the same line on the page:
+
+```
+<span> ... </span> <span> ... </span> <span> ... </span>
+```
+Some other inline elements are `<img>`, `<button>`, and `<input>`
+
+<br>
+
+Block-level elements like `<div>`s, `<p>`s, and `<h*>`s (headlines) take up the entire width of the page.  Successive block-level elements will end up stacking on top of each other, like so:
+
+```
+<div1></div1> 
+<div2></div2> 
+<div3></div3>
+```
+
+Properties like `width` and `height` can not be applied to `inline` elements. You can change this behavior (or, conversely, you can make a `block` element share horizontal space) by setting `display: inline-block`.  
 
 ###Position property
 
+When you want to move elements around the page or set their position relative to a parent element or fixed within the browser window, you use the `position` property. An element's position can either be
+ 
+- `static` (default, element falls into normal layout flow)
+- `relative` 
+- `absolute`
+- `fixed`. 
 
-##Advanced CSS
-- Pseudo-classes
-- Layout: Display and Position properties
-- Responsive Design
+Once the `position` property is applied to an element, that element has access to `top`, `left`, `right` and `bottom` properties which will move the element around. Absolutely positioned elements are in placed in relation to their parent container (if there is none, it is in relation to the browser window). Fixed positioning will fix the element to the page and ensure that it never moves.
 
+The differences can be subtle and a bit tricky to comprehend, so I encourage you to [Read the docs](https://developer.mozilla.org/en-US/docs/Web/CSS/position) and experiment.
 
+Note: To center your text you can use `text-align:center` and to center block elements you can set `margin: 0 auto`
 
 
