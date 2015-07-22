@@ -16,46 +16,44 @@
 ##HTTP and the Client/Server model
 <hr>
 
-Clients and Servers are *cooperating* programs within an application.  In this class our focus is on web servers, but there are other kinds (e.g. proxy server, FTP server).  The client of a web server is a web browser, which may be running on a desktop, laptop, or mobile device.
+Clients and Servers are *cooperating* programs within an application.  In this class our focus is on web servers, but there are other kinds (e.g. email server, proxy server).  The client of a web server is a web browser, which may be running on a desktop, laptop, or mobile device.
 
 With a few exceptions, all interactions between clients and servers are initiated by the client, which requests some resource or service from the server.  The conversation between client and server is known as the **Request/Response Cycle**.  The **protocol** (language) used in this conversation is HTTP, or HyperText Transfer Protocol.
 
-####HTTP methods - GET, POST, PUT, DELETE
+###HTTP methods 
 
-- Accomplish what is commonly known as CRUD - Create, Read, Update, Destroy
-- Have a look with Chrome Dev Tools
+- **GET** - Retrieve data from the server
+- **POST** - Send new data to the server
+- **PUT** - Modify data that exists on the server
+- **DELETE** - Delete data from the server
+- These accomplish what is commonly known as **CRUD** - Create, Read, Update, Destroy
+- Let's have a look with Chrome Dev Tools
 
-####TCP/IP - (Probably TMI)
+###TCP/IP 
 
 This is a lower-level protocol that HTTP runs on top of. Think of the "IP address" of a computer on the internet.  Computer networking is divided into distinct "layers" of abstraction.  HTTP sits at the top on the Application layer and TCP/IP spans across several lower layers.  If you want to learn more, check out the [OSI model](https://en.wikipedia.org/wiki/OSI_model).
 
-####So what are Resources and Services?
-######maybe just speak to this, not include it
+###So what are Resources and Services?
 
-- **Resource:** Documents, images, or collections of such.  Something that is identifiable
-- **Service:** A means of communcation between two applications, commonly known as an API, or Application Programming Interface.
+- **Resource:** Documents, images, or collections of such.  Something that is identifiable.  Think of a URL - Uniform **Resource** Locator
+- **Service:** A means of communcation between two applications, commonly known as an **API**, or Application Programming Interface.
 
 <br>
 
-## Front-end Web Development
-<hr>
-
-
-The front-end developer's job is to program the layout and functionality of a website. This is accomplished by writing code in HTML, CSS, and Javascript.  In developer lingo, the collection of HTML, CSS, and Javascript files that bring a page to life are called **assets**
+##Front-end Web Development
+The front-end developer's job is to program the layout and functionality of a website, i.e. what the user interacts with. This is accomplished by writing code in HTML, CSS, and Javascript.  In developer lingo, the collection of HTML, CSS, and Javascript files that bring a web page to life are called **assets**
 
 
 - **HTML** describes the structure and the semantic content of a web document. It is the scaffold that adds various layout elements to your website.
 - **CSS** is a set of style properties that give your page its look and feel
 - **JavaScript** adds interactivity to the page.  When the user clicks a button, or submits a form, or there is some other kind of **event**, Javascript knows what to do.
 
-### Assets and the Request/Response cycle
-
-
-Demo it in Chrome Dev Tools
+###Assets and the Request/Response cycle
+Demo - Chrome Dev Tools
 
 <br>
 
-## Back-end Web Development
+##Back-end Web Development
 
 - Provides core behind-the-scenes functionality
 	- Manage user accounts
@@ -74,12 +72,15 @@ Demo it in Chrome Dev Tools
 ## Developer Tools
 
 - Sublime
-	- linter, [Emmett](http://emmet.io/)
-	- file types
 	- "open in browser" command
-	- multi-window
-	- snippets
-- Chrome Developer Tools
+	- productivity tools
+		- linter, [Emmett](http://emmet.io/)
+		- snippets
+		- multi-window
+	- learn keyboard shortcuts as much as possible!
+- Chrome Developer Tools	
+	- See your work the way the browser sees it
+	- Speed up HTML/CSS work flow
  	- Inspect HTML elements and CSS style properties
 	- Debug Javascript
 	- Program "what-if" scenarios
@@ -376,7 +377,7 @@ A stylesheet consists of a collection of style **rules**.  Each rule contains an
 
 ![alt text](https://github.com/rycwilson/FEWD-UXDI-2day/blob/master/img/css_syntax.png?raw=true)
 
-(Demo)
+Demo - Back to HTML Form exercise
 
 ###"Cascading"
 CSS rules can come from a number of different sources.  Like:
@@ -395,21 +396,7 @@ So how does the browser decide? ...
 ###Selectors and Specificity
 In order to create a CSS rule, we first have to select the element(s) it applies to.  There are A LOT of different ways to do this, some more **specific** than others.  This is the solution to the "cascading" problem.  The browser will examine all the rules that apply to a given element and **compute** which one is most specific.  In the event that two rules are equi-specific, the LAST one that was loaded into the browser will win.
 
-**Tag** - Select all `<p>` elements
-
-```
-p {
-  ...
-}
-```
-
-**Class** - Select all elements with `class="my_class"`
-
-```
-.my_class {
-  ...
-}
-```
+Here are the most common selectors in *decreasing* order of specificity
 
 **ID** - Select the element with `id="my_element"`  
 
@@ -417,24 +404,113 @@ p {
 
 ```
  #my_element {
+   border: 1px solid black
    ...
  }
 ```
 
-**Descendent**
+**Class** - Select all elements with `class="my_class"`
 
-**Direct Descendent**
+```
+.my_class {
+ background-color: green;
+ ...
+}
+```
 
-[Learn more](http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+**Type** - Select all `<p>` elements
+
+```
+p {
+ font-family: Verdana;
+ ...
+}
+```
+
+**Universal** - Select everything!  You don't really want to use this, except perhaps for testing
+
+```
+* {
+  ...
+}
+```
+ 
+So, in order of specificity, we have:
+
+**Most specific**
+
+1. `!important` You can append this to any property setting and it will override all other settings, regardless of specificity.  Use this very rarely!  Like dropping a bomb on your stylesheets.
+2. Inline styling - This is when you use the `style` attribute to style an element.  This approach should be used infrequently, as you want to separate CSS from HTML as much as possible.
+3. ID - Also use infrequently.  Lots of IDs pollute your CSS.
+4. Classes - Best practice!  The most common way of styling.
+5. Type - Use for broad styling like font-size, padding, margin.
+
+**Least specific**
 
 
-###Selectors Exercise - Bento Box (20 mins)
+###Selectors Exercise - Bento Box I (15 mins)
+Partner up and work though levels 1-14
+
 [Have fun!](http://flukeout.github.io)
 
 <br>
 
+###Pseudo-classes
+A pseudo-class is a keyword that you append to a selector in order to specify not just which element(s) to target, but also the **state** of the element.  The state of the element can refer to:
+
+- its relative location in the document tree, e.g. (`:first-child`)
+- a user's actions, e.g. hovering over an element (`:hover`) or page navigation (`:visited`)    
+- the content of the element, e.g. `:checked` for some input elements
+
+Examples:
+
+**:focus** - Select element(s) that have received focus
+
+```
+button:focus {
+  border-color: red;
+}
+```
+
+**:nth-child(n)** - Select element(s) that are the n'th children of their parent elements
+
+```
+<head>
+  <style>
+    <!-- this will select the milk -->
+    li:nth-child(3) {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Grocery list:</h2>
+  <ul>
+    <li>bread</li>
+    <li>eggs</li>
+    <li>milk</li>
+    <li>broccoli</li
+  </ul>
+</body>
+```
+
+###Selectors Exercise - Bento Box II (20 mins)
+Partner up and work though levels 15-26
+
+[Have fun!](http://flukeout.github.io)
+
+<br>
+
+[Learn more about selectors](http://code.tutsplus.com/tutorials/the-30-css-selectors-you-must-memorize--net-16048)
+
+[Learn more about specificity](https://css-tricks.com/specifics-on-css-specificity/)
+
+<br>
+
+
 
 ## CSS Properties
+For a comprehensive list: [CSS docs](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
 
 ###The Box Model
 Each HTML element in a web page is represented as a rectangular box. The box model describes the content of the space taken by an element. There are four essential edges in the model: margin, border, padding, and content.  The margin, border, and padding properties exist for ALL elements.  So let's start with those...
@@ -467,6 +543,11 @@ Each HTML element in a web page is represented as a rectangular box. The box mod
 ####Other common CSS properties
 
 ...
+
+###Display property
+
+###Position property
+
 
 ##Advanced CSS
 - Pseudo-classes
