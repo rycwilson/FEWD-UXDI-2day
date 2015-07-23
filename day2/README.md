@@ -173,7 +173,7 @@ Some examples:
 Always make sure you understand what the code is doing before copying and pasting it. Fortunately, this is not too challenging and Bootstrap has excellent documentation. As always, if you're confused or things are breaking - google around. Bootstrap is pretty much ubiquitous and it is likely that others have encountered and (hopefully) solved the issues you're dealing with.
 
 ##Bootstrap Lab
-To put your new skills to practice, use Bootstrap to craft three different mock-ups.  Find these in the `day2/bootstrap/mocks/` folder.
+To put your new skills to practice, use Bootstrap to craft three different mock-ups.  Find these in the `day2/bootstrap-mocks/` folder.
 
 1. For each mockup, create a new HTML page and include Bootstrap in your `<head>` tag. To do so, go [here](http://getbootstrap.com/getting-started/#download-cdn) and copy the CDN links into `<head>`.  Bootstrap Javascript plug-ins need jQuery to work, so include this line just after the `<title>` tag: `<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>`
 2. To make sure Bootstrap is loaded property, open Chrome Dev Tools and click on the Network tab.  When you load your HTML, you should see `bootstrap.min.js` with a status of 200.
