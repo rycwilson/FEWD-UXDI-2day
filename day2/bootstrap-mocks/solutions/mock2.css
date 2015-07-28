@@ -1,0 +1,31 @@
+.form-control-feedback {
+  top: 0;
+}
+
+.social {
+  height: 30px;
+  width: 30px;
+  border-radius: 20%;
+  margin-right: 10px;
+}
+
+.motto {
+  background: #e3e3e3;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid rgb(213, 212, 212);
+  border-radius: 5px;
+  font-size: 24px;
+}
+
+.col-md-5 {
+  margin-left: 50px;
+  padding: 30px;
+}
+
+.navbar-nav > li > a {
+  padding-right: 0;
+  padding-left: 7px;
+}

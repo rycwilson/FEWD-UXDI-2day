@@ -1,0 +1,16 @@
+.navbar-nav > li > a {
+    padding-right: 0;
+    padding-left: 7px;
+}
+
+.roundedIcon {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.social {
+  height: 30px;
+  width: 30px;
+  border-radius: 20%;
+  margin-right: 10px;
+}
