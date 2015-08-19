@@ -29,6 +29,8 @@ With a few exceptions, all interactions between clients and servers are initiate
 - These accomplish what is commonly known as **CRUD** - Create, Read, Update, Destroy
 - Let's have a look with Chrome Dev Tools
 
+[Further reading](http://code.tutsplus.com/tutorials/http-the-protocol-every-web-developer-must-know-part-1--net-31177)
+
 ###TCP/IP 
 
 This is a lower-level protocol that HTTP runs on top of. Think of the "IP address" of a computer on the internet.  Computer networking is divided into distinct "layers" of abstraction.  HTTP sits at the top on the Application layer and TCP/IP spans across several lower layers.  If you want to learn more, check out the [OSI model](https://en.wikipedia.org/wiki/OSI_model).
